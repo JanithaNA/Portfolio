@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+.card {
+    position: relative;
+    width: 90%; /* Responsive width */
+    max-width: 300px; /* Maximum width for larger screens */
+    height: 200px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures the pseudo-element stays within the card */
+    text-align: center;
+    cursor: pointer; /* Indicate hoverable area */
+    margin: 10px auto; /* Center card and add margin */
+    color: rgb(300,-102,0);
+}
+
+/* Hover effect description */
+.card::after {
+    content: "This is a description that appears on hover.";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0; /* Hidden by default */
+    transform: translateY(100%); /* Positioned below the card */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect */
+.card:hover::after {
+    opacity: 1; /* Fully visible on hover */
+    transform: translateY(0); /* Slide up into view */
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        height: auto; /* Adjust height for smaller screens */
+        max-width: 90%; /* Ensure the card doesn't exceed the viewport width */
+    }
+
+    .card::after {
+        font-size: 12px; /* Adjust font size for smaller screens */
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 15px; /* Reduce padding for very small screens */
+    }
+
+    .card::after {
+        font-size: 10px; /* Further adjust font size for very small screens */
+        padding: 6px; /* Further adjust padding */
+    }
+}
+
+form{
+    background-color: red;
+}
+
+.jani1{
+    background-color: blue;
+}
+
+
+#slider{
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+ /*   overflow: hidden;*/
+}
+.cards img{
+    height: 200px;
+    width: 200px;
+}
+    </style>
+    
+    <div class="card">
+        <h3 class="card-title">Card Title</h3>
+        <p class="card-content">This is some content inside the card. It will be responsive along with the decorative element.</p>
+    </div>
+
+    <form action="" method="post">
+        <input type="text" name="" id="text">
+        <input type="button" value="janith" class="dd">
+        <input type="checkbox" name="" id="check">
+        <button type="submit">Submoit</button>
+    </form>
+
+<div id="slider">
+    <div class="cards"><img src="discord-brands-solid.svg" alt=""></div>
+    <div class="cards"><img src="Savings.png" alt=""></div>
+    <div class="cards"><img src="Under Constructions.png" alt=""></div>
+    <div class="cards"><img src="www.png" alt=""></div>
+</div>
+<button id="next">Next</button>
+<button id="pre">Pre</button>
+
+
+
+
+
+<script src="type/javascript">
+const card = document.getElementsByClassName("card");
+const button = document.getElementsByClassName("dd");
+const text = document.getElementById("text");
+const check = document.getElementById("check");
+const submit = document.getElementsByTagName("button")[0]; // Assuming there's only one button
+
+const slider = document.getElementById("slider");
+const cards = document.getElementsByClassName("cards");
+const next = document.getElementById("next");
+const pre = document.getElementById("pre");
+
+let currentTranslateX = 0;
+
+next.onclick = function(){
+    slider.style.transform = 'translateX(200px)';
+}
+
+</script>
+</body>
+</html>
